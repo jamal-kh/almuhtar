@@ -1,10 +1,10 @@
 // Site Content Configuration
-// All text content, labels, and data for easy editing
+// جميع محتويات الموقع من نصوص، عناوين، وصور لتسهيل التعديل
 
 export const siteContent = {
-  // Header Content
+  // Header
   header: {
-    logo: "@/public/assets/hero-furniture.jpg",
+    logo: "@/public/assets/logo.png",
     navItems: [
       { label: "الرئيسية", id: "home" },
       { label: "من نحن", id: "about" },
@@ -49,34 +49,44 @@ export const siteContent = {
   // Services Section
   services: {
     title: "خدماتنا",
-    subtitle: "حلول شاملة لجميع احتياجات الأثاث الخاصة بك، من التصميم إلى التسليم",
+    subtitle:
+      "حلول شاملة لجميع احتياجات الأثاث الخاصة بك، من التصميم إلى التسليم",
     items: [
       {
         title: "تصميم مخصص",
         description:
-          "أثاث مخصص مصمم ليتناسب مع أسلوبك الفريد ومتطلبات المساحة الخاصة بك.",
+          "أثاث مصمم خصيصاً ليتناسب مع أسلوبك ومتطلبات المساحة الخاصة بك.",
+        imageAlt: "تصميم أثاث مخصص"
       },
       {
         title: "استشارات التصميم الداخلي",
         description:
-          "نصائح الخبراء حول وضع الأثاث وأنظمة الألوان وتحسين المساحة.",
+          "نقدم نصائح الخبراء حول وضع الأثاث وأنظمة الألوان وتحسين المساحة.",
+        imageAlt: "استشارة تصميم داخلي"
       },
       {
         title: "مصنوع حسب الطلب",
-        description: "أثاث مصنوع بدقة مصمم وفقاً لمواصفاتك وأبعادك الدقيقة.",
+        description:
+          "أثاث مصنوع بدقة وفقاً لمواصفاتك وأبعادك الدقيقة.",
+        imageAlt: "أثاث حسب الطلب"
       },
       {
         title: "خدمة التركيب",
-        description: "تجميع وتركيب احترافي من قبل فريقنا ذو الخبرة.",
+        description:
+          "تركيب وتجميع احترافي من قبل فريقنا ذو الخبرة.",
+        imageAlt: "تركيب أثاث"
       },
       {
         title: "توصيل مجاني",
-        description: "توصيل مجاني وخدمة شاملة لجميع الطلبات.",
+        description:
+          "توصيل مجاني وخدمة شاملة لجميع الطلبات.",
+        imageAlt: "توصيل أثاث"
       },
       {
         title: "ضمان الجودة",
         description:
           "مواد وحرفية فاخرة مدعومة بضمان الرضا الخاص بنا.",
+        imageAlt: "ضمان الجودة"
       },
     ],
   },
@@ -89,19 +99,22 @@ export const siteContent = {
       {
         title: "مجموعة غرف الطعام العصرية",
         category: "غرفة الطعام",
+        imageAlt: "غرفة طعام عصرية"
       },
       {
         title: "مجموعة غرف النوم الفاخرة",
         category: "غرفة النوم",
+        imageAlt: "غرفة نوم فاخرة"
       },
       {
         title: "مكتب عصري",
         category: "مكتب منزلي",
+        imageAlt: "مكتب عصري"
       },
     ],
   },
 
-  // Why Choose Section
+  // Why Choose Us Section
   whyChoose: {
     title: "لماذا تختارنا",
     subtitle: "اكتشف ما يميزنا في عالم تصميم الأثاث الفاخر",
@@ -119,21 +132,21 @@ export const siteContent = {
       {
         title: "ضمان مدى الحياة",
         description:
-          "ثقتنا في الجودة مدعومة بضمانات شاملة ودعم مخصص للعملاء.",
+          "جميع منتجاتنا مدعومة بضمان شامل ودعم مخصص للعملاء.",
       },
       {
         title: "تصميم خالد",
         description:
-          "نصنع قطعاً تتجاوز الصيحات، وتقدم الجمال والوظيفة الدائمة للأجيال.",
+          "قطع تتجاوز الصيحات لتقدم الجمال والوظيفة الدائمة.",
       },
     ],
   },
 
   // Footer Content
   footer: {
-    companyName: "لوكس للأثاث",
+    companyName: "المختار",
     companyDescription:
-      "نصنع أثاثاً استثنائياً يحول المساحات ويثري الحياة منذ عام 2009.",
+      "نصنع أثاثاً استثنائياً يحوّل المساحات ويثري الحياة منذ عام 2009.",
     quickLinks: ["من نحن", "خدماتنا", "تصاميمنا", "لماذا نحن", "اتصل بنا"],
     services: [
       "تصميم مخصص",
@@ -146,7 +159,7 @@ export const siteContent = {
       title: "اتصل بنا",
       address: "123 شارع التصميم، الحي الإبداعي، نيويورك 10001",
       phone: "+1 (234) 567-890",
-      email: "info@luxefurniture.com",
+      email: "info@almokhtar.com",
     },
     socialLinks: [
       { label: "Facebook", href: "#" },
@@ -154,9 +167,8 @@ export const siteContent = {
       { label: "Twitter", href: "#" },
       { label: "LinkedIn", href: "#" },
     ],
-    copyright: "© 2024 لوكس للأثاث. جميع الحقوق محفوظة.",
+    copyright: "© 2024 المختار. جميع الحقوق محفوظة.",
   },
 };
 
 export default siteContent;
-
