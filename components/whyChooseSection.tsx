@@ -38,7 +38,7 @@ const WhyChooseSection: React.FC = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="flex gap-6 p-6 rounded-xl bg-card border-2 border-border hover:border-accent transition-all duration-500 hover:shadow-[var(--shadow-elegant)] hover:-translate-y-2 animate-slide-in-right group cursor-pointer"
+              className="flex gap-6 p-6 rounded-xl bg-card border-2 border-border hover:border-accent transition-all duration-500 hover:shadow-[var(--shadow-elegant)] hover:-translate-y-2 animate-slide-in-right  group cursor-pointer "
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="bg-accent/10 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-accent/20 transition-all duration-300">

@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-md"
           : isMobileMenuOpen
-          ? "bg-white shadow-md"
+          ? "bg-white"
           : "bg-transparent"
       }`}
     >
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
 
         {/* === Mobile Menu === */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in rounded-lg bg-white">
+          <div className="md:hidden mt-4 pb-4 animate-fade-in ">
             <ul className="flex flex-col gap-4 p-4 text-lg font-medium">
               {navItems.map((item) => (
                 <li key={item.id}>
