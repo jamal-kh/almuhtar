@@ -5,12 +5,13 @@ import Header from "@/components/header";
 import HeroSection from "@/components/heroSections";
 import ServicesSection from "@/components/servicesSection";
 import WhyChooseSection from "@/components/whyChooseSection";
-import Image from "next/image";
+import SocialFloatButton from "@/components/socialFloatButton";
 
 export default function Home() {
   return (
  <div className="min-h-screen">
       <Header />
+      <SocialFloatButton />
       <main>
         <HeroSection />
         <AboutSection />

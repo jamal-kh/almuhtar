@@ -1,10 +1,11 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import design1 from "@/assets/design-1.jpg";
-import design2 from "@/assets/design-2.jpg";
-import design3 from "@/assets/design-3.jpg";
+import design1 from "@/public/assets/design-1.jpg";
+import design2 from "@/public/assets/design-2.jpg";
+import design3 from "@/public/assets/design-3.jpg";
 import { FC } from "react";
+import { siteContent } from "@/content";
 
 interface Design {
   image: StaticImageData;
@@ -13,23 +14,14 @@ interface Design {
 }
 
 const DesignsSection: FC = () => {
-  const designs: Design[] = [
-    {
-      image: design1,
-      title: "مجموعة غرف الطعام العصرية",
-      category: "غرفة الطعام",
-    },
-    {
-      image: design2,
-      title: "مجموعة غرف النوم الفاخرة",
-      category: "غرفة النوم",
-    },
-    {
-      image: design3,
-      title: "مكتب عصري",
-      category: "مكتب منزلي",
-    },
-  ];
+  const { designs: designsContent } = siteContent;
+  const images = [design1, design2, design3];
+
+  const designs: Design[] = designsContent.items.map((item, index) => ({
+    image: images[index],
+    title: item.title,
+    category: item.category,
+  }));
 
   return (
     <section id="designs" className="py-20 bg-secondary/30">
@@ -37,10 +29,10 @@ const DesignsSection: FC = () => {
         {/* العنوان */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            تصاميمنا
+            {designsContent.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            استكشف مجموعتنا المختارة من تصاميم الأثاث الخالدة
+            {designsContent.subtitle}
           </p>
         </div>
 

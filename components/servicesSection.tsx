@@ -2,6 +2,7 @@
 
 import { Palette, Truck, Wrench, Home, Ruler, Package } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
+import { siteContent } from "@/content";
 
 interface Service {
   icon: React.ElementType;
@@ -10,49 +11,25 @@ interface Service {
 }
 
 const ServicesSection: React.FC = () => {
-  const services: Service[] = [
-    {
-      icon: Palette,
-      title: "تصميم مخصص",
-      description: "أثاث مخصص مصمم ليتناسب مع أسلوبك الفريد ومتطلبات المساحة الخاصة بك.",
-    },
-    {
-      icon: Home,
-      title: "استشارات التصميم الداخلي",
-      description: "نصائح الخبراء حول وضع الأثاث وأنظمة الألوان وتحسين المساحة.",
-    },
-    {
-      icon: Ruler,
-      title: "مصنوع حسب الطلب",
-      description: "أثاث مصنوع بدقة مصمم وفقاً لمواصفاتك وأبعادك الدقيقة.",
-    },
-    {
-      icon: Wrench,
-      title: "خدمة التركيب",
-      description: "تجميع وتركيب احترافي من قبل فريقنا ذو الخبرة.",
-    },
-    {
-      icon: Truck,
-      title: "توصيل مجاني",
-      description: "توصيل مجاني وخدمة شاملة لجميع الطلبات.",
-    },
-    {
-      icon: Package,
-      title: "ضمان الجودة",
-      description: "مواد وحرفية فاخرة مدعومة بضمان الرضا الخاص بنا.",
-    },
-  ];
+  const { services: servicesContent } = siteContent;
+  const icons = [Palette, Home, Ruler, Wrench, Truck, Package];
+
+  const services: Service[] = servicesContent.items.map((item, index) => ({
+    icon: icons[index],
+    title: item.title,
+    description: item.description,
+  }));
 
   return (
     <section id="services" className="py-20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            خدماتنا
+        <div className="text-center m-auto mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl text-center font-bold text-foreground mb-4">
+            {servicesContent.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            حلول شاملة لجميع احتياجات الأثاث الخاصة بك، من التصميم إلى التسليم
+            {servicesContent.subtitle}
           </p>
         </div>
 

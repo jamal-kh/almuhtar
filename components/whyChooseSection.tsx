@@ -2,6 +2,7 @@
 
 import { Shield, Star, Leaf, Clock } from "lucide-react";
 import React from "react";
+import { siteContent } from "@/content";
 
 interface Reason {
   icon: React.ElementType;
@@ -10,32 +11,14 @@ interface Reason {
 }
 
 const WhyChooseSection: React.FC = () => {
-  const reasons: Reason[] = [
-    {
-      icon: Star,
-      title: "جودة فائقة",
-      description:
-        "نستخدم فقط أفضل المواد ونوظف حرفيين متمرسين لضمان أن كل قطعة تلبي معاييرنا الصارمة.",
-    },
-    {
-      icon: Leaf,
-      title: "مواد مستدامة",
-      description:
-        "ملتزمون بالمسؤولية البيئية، نحصل على مواد صديقة للبيئة ونمارس التصنيع المستدام.",
-    },
-    {
-      icon: Shield,
-      title: "ضمان مدى الحياة",
-      description:
-        "ثقتنا في الجودة مدعومة بضمانات شاملة ودعم مخصص للعملاء.",
-    },
-    {
-      icon: Clock,
-      title: "تصميم خالد",
-      description:
-        "نصنع قطعاً تتجاوز الصيحات، وتقدم الجمال والوظيفة الدائمة للأجيال.",
-    },
-  ];
+  const { whyChoose } = siteContent;
+  const icons = [Star, Leaf, Shield, Clock];
+
+  const reasons: Reason[] = whyChoose.reasons.map((reason, index) => ({
+    icon: icons[index],
+    title: reason.title,
+    description: reason.description,
+  }));
 
   return (
     <section id="why-us" className="py-20">
@@ -43,10 +26,10 @@ const WhyChooseSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            لماذا تختارنا
+            {whyChoose.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            اكتشف ما يميزنا في عالم تصميم الأثاث الفاخر
+            {whyChoose.subtitle}
           </p>
         </div>
 

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { FC } from "react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-furniture.jpg";
+import heroImage from "@/public/assets/hero-furniture.jpg";
+import { siteContent } from "@/content";
 
 const HeroSection: FC = () => {
   const scrollToSection = (id: string): void => {
@@ -12,6 +13,8 @@ const HeroSection: FC = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const { hero } = siteContent;
 
   return (
     <section
@@ -22,7 +25,7 @@ const HeroSection: FC = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImage}
-          alt="صالة عرض الأثاث الفاخر"
+          alt={hero.imageAlt}
           className="w-full h-full object-cover"
           priority
           placeholder="blur"
@@ -34,10 +37,10 @@ const HeroSection: FC = () => {
       <div className="container mx-auto px-4 z-10 pt-20">
         <div className="max-w-2xl animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            حوّل مساحتك
+            {hero.title}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            اختبر المزيج المثالي من الأناقة والراحة والتصميم الخالد مع مجموعة الأثاث المختارة بعناية.
+            {hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
@@ -45,14 +48,14 @@ const HeroSection: FC = () => {
               size="lg"
               onClick={() => scrollToSection("designs")}
             >
-              استكشف المجموعة
+              {hero.buttons.primary}
             </Button>
             <Button
               variant="outline"
               size="lg"
               onClick={() => scrollToSection("about")}
             >
-              اعرف المزيد
+              {hero.buttons.secondary}
             </Button>
           </div>
         </div>

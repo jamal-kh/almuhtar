@@ -12,6 +12,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteContent } from "@/content";
 
 interface SocialLink {
   icon: LucideIcon;
@@ -20,15 +21,17 @@ interface SocialLink {
 }
 
 const Footer: FC = () => {
-  const socialLinks: SocialLink[] = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
+  const { footer } = siteContent;
+  const socialIcons = [Facebook, Instagram, Twitter, Linkedin];
 
-  const quickLinks: string[] = ["من نحن", "خدماتنا", "تصاميمنا", "لماذا نحن", "اتصل بنا"];
-  const services: string[] = ["تصميم مخصص", "استشارات التصميم", "التركيب", "التوصيل", "ضمان الجودة"];
+  const socialLinks: SocialLink[] = footer.socialLinks.map((social, index) => ({
+    icon: socialIcons[index],
+    href: social.href,
+    label: social.label,
+  }));
+
+  const quickLinks = footer.quickLinks;
+  const services = footer.services;
 
   return (
     <footer className="bg-primary text-primary-foreground pt-16 pb-8">
@@ -36,9 +39,9 @@ const Footer: FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* معلومات الشركة */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">لوكس للأثاث</h3>
+            <h3 className="text-2xl font-bold mb-4">{footer.companyName}</h3>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              نصنع أثاثاً استثنائياً يحول المساحات ويثري الحياة منذ عام 2009.
+              {footer.companyDescription}
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => {
@@ -93,30 +96,30 @@ const Footer: FC = () => {
 
           {/* معلومات الاتصال */}
           <div>
-            <h4 className="text-lg font-bold mb-4">اتصل بنا</h4>
+            <h4 className="text-lg font-bold mb-4">{footer.contact.title}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-primary-foreground/80">
-                  123 شارع التصميم، الحي الإبداعي، نيويورك 10001
+                  {footer.contact.address}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="tel:+1234567890"
+                  href={`tel:${footer.contact.phone.replace(/\s/g, '')}`}
                   className="text-primary-foreground/80 hover:text-accent transition-colors"
                 >
-                  +1 (234) 567-890
+                  {footer.contact.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="mailto:info@luxefurniture.com"
+                  href={`mailto:${footer.contact.email}`}
                   className="text-primary-foreground/80 hover:text-accent transition-colors"
                 >
-                  info@luxefurniture.com
+                  {footer.contact.email}
                 </a>
               </li>
             </ul>
@@ -124,31 +127,11 @@ const Footer: FC = () => {
         </div>
 
         {/* الشريط السفلي */}
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-primary-foreground/20 pt-4">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <p className="text-primary-foreground/70 text-sm">
-              © 2024 لوكس للأثاث. جميع الحقوق محفوظة.
+              {footer.copyright}
             </p>
-            <div className="flex gap-6 text-sm">
-              <a
-                href="#"
-                className="text-primary-foreground/70 hover:text-accent transition-colors"
-              >
-                سياسة الخصوصية
-              </a>
-              <a
-                href="#"
-                className="text-primary-foreground/70 hover:text-accent transition-colors"
-              >
-                شروط الخدمة
-              </a>
-              <a
-                href="#"
-                className="text-primary-foreground/70 hover:text-accent transition-colors"
-              >
-                سياسة ملفات تعريف الارتباط
-              </a>
-            </div>
           </div>
         </div>
       </div>
