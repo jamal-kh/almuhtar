@@ -39,7 +39,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-6 py-3">
         {/* === Navbar Grid Layout === */}
-        <nav className="grid grid-cols-3 items-center">
+        <nav className="grid grid-cols-2 md:grid-cols-3 justify-between items-center">
           {/* === Left: Logo === */}
           <div className="row-span-2 flex justify-start">
             <Image
@@ -79,10 +79,10 @@ const Header: React.FC = () => {
                 {siteContent.header.ctaButton}
               </Button>
             </div>
-
+            
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden text-foreground"
+              className="md:hidden row-span-6 text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
