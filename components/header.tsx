@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { FaBars, FaTimes } from "react-icons/fa"; // ✅ replaced Lucide with React Icons
 import { Button } from "@/components/ui/button";
 import { siteContent } from "@/content";
 import Image from "next/image";
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
           <div className="row-span-2 flex justify-start">
             <Image
               src={logo}
-              alt="لوكس للأثاث"
+              alt="المختار"
               width={60}
               height={20}
               className="object-contain select-none"
@@ -79,21 +79,25 @@ const Header: React.FC = () => {
                 {siteContent.header.ctaButton}
               </Button>
             </div>
-            
+
             {/* Mobile Menu Toggle */}
             <button
               className="md:hidden row-span-6 text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMobileMenuOpen ? (
+                <FaTimes size={26} className="transition-transform duration-300" />
+              ) : (
+                <FaBars size={26} className="transition-transform duration-300" />
+              )}
             </button>
           </div>
         </nav>
 
         {/* === Mobile Menu === */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in ">
+          <div className="md:hidden mt-4 pb-4 animate-fade-in">
             <ul className="flex flex-col gap-4 p-4 text-lg font-medium">
               {navItems.map((item) => (
                 <li key={item.id}>

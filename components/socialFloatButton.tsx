@@ -1,11 +1,11 @@
 "use client";
 
 import { FC, useState } from "react";
-import { Facebook, Instagram, Twitter, Linkedin, Share2 } from "lucide-react";
-import { LucideIcon } from "lucide-react";
-
+import {FaShare} from "react-icons/fa";
+import { siteContent } from "@/content";
+import { IconType } from "react-icons";
 interface SocialLink {
-  icon: LucideIcon;
+  icon: IconType;
   href: string;
   label: string;
   color: string;
@@ -14,12 +14,7 @@ interface SocialLink {
 const SocialFloatButton: FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const socialLinks: SocialLink[] = [
-    { icon: Facebook, href: "#", label: "Facebook", color: "bg-blue-600 hover:bg-blue-700" },
-    { icon: Instagram, href: "#", label: "Instagram", color: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600" },
-    { icon: Twitter, href: "#", label: "Twitter", color: "bg-sky-500 hover:bg-sky-600" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", color: "bg-blue-700 hover:bg-blue-800" },
-  ];
+  const socialLinks: SocialLink[] = siteContent.footer.socialLinks
 
   return (
     <div
@@ -40,7 +35,7 @@ const SocialFloatButton: FC = () => {
         }}
         aria-label="Social media links"
       >
-        <Share2 className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+        <FaShare className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
       </button>
 
       {/* Social buttons as vertical list */}

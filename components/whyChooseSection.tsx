@@ -1,6 +1,5 @@
 "use client";
 
-import { Shield, Star, Leaf, Clock } from "lucide-react";
 import React from "react";
 import { siteContent } from "@/content";
 
@@ -12,10 +11,9 @@ interface Reason {
 
 const WhyChooseSection: React.FC = () => {
   const { whyChoose } = siteContent;
-  const icons = [Star, Leaf, Shield, Clock];
 
   const reasons: Reason[] = whyChoose.reasons.map((reason, index) => ({
-    icon: icons[index],
+    icon: reason.icon,
     title: reason.title,
     description: reason.description,
   }));

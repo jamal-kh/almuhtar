@@ -1,6 +1,5 @@
 "use client";
 
-import { Palette, Truck, Wrench, Home, Ruler, Package } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { siteContent } from "@/content";
 
@@ -12,10 +11,9 @@ interface Service {
 
 const ServicesSection: React.FC = () => {
   const { services: servicesContent } = siteContent;
-  const icons = [Palette, Home, Ruler, Wrench, Truck, Package];
 
-  const services: Service[] = servicesContent.items.map((item, index) => ({
-    icon: icons[index],
+  const services: Service[] = servicesContent.items.map((item) => ({
+    icon: item.icon,
     title: item.title,
     description: item.description,
   }));
