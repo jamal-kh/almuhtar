@@ -82,14 +82,14 @@ const Footer: FC = () => {
                   href={`tel:${footer.contact.phone.replace(/\s/g, "")}`}
                   className="text-primary-foreground/80 hover:text-accent transition-colors"
                 >
-                  {footer.contact.phone}
+                  <bdi>{footer.contact.phone}</bdi>
                 </a>
               </li>
 
               <li className="flex items-center gap-3">
                 <FaEnvelope className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href={`mailto:${footer.contact.email}`}
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${footer.contact.email}`}
                   className="text-primary-foreground/80 hover:text-accent transition-colors"
                 >
                   {footer.contact.email}
