@@ -10,6 +10,7 @@ import {
   FaShield,
   FaClock,
   FaTiktok,
+  FaWhatsapp
 } from "react-icons/fa6";
 
 // Site Content Configuration
@@ -159,12 +160,12 @@ whyChoose: {
       email: "almuhtarconcept@gmail.com",
     },
     socialLinks: [
+      { label: "Whatsapp", icon: FaWhatsapp,href: "https://wa.me/905348939441", color: "bg-[#25D366] hover:bg-[#1DA851]"},
       { label: "Facebook", icon: FaFacebook,href: "https://www.facebook.com/share/172ehDXZj7/", color: "bg-blue-600 hover:bg-blue-700"},
       { label: "Instagram",icon: FaInstagram, href: "https://www.instagram.com/almuhtar024concept?igsh=eHQzOGdvbGtkenlm", color: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"},
       { label: "X", icon: FaSquareXTwitter,href: "https://x.com/almuhtar024?t=9Dci5DgB6SJKOrboM2dRyQ&s=09", color: "bg-sky-500 hover:bg-sky-600" },
       { label: "LinkedIn", icon: FaLinkedin,href: "https://www.linkedin.com/in/%D8%A7%D9%84%D9%85%D9%8F%D8%AE%D9%92%D8%AA%D9%8E%D8%A7%D8%B1-almuhtar-7a1493387",color: "bg-blue-700 hover:bg-blue-800" },
       { label: "TikTok", icon: FaTiktok,href: "https://www.tiktok.com/@almuhtar_concept?_t=ZS-904gfL5qRcW&_r=1", color: "bg-[#FE2C55] hover:bg-[#e3274c]" },
-
     ],
     copyright: "© 2024 المختار. جميع الحقوق محفوظة.",
   },
